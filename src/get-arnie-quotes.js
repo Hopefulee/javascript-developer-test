@@ -1,6 +1,10 @@
 const { httpGet } = require('./mock-http-interface');
 
-const getArnieQuotes = async (urls) => {
+const getArnieQuotes = async urls => {
+  if (!urls || urls.length === 0) {
+    return [];
+  }
+
   const results = [];
 
   // Process each URL
